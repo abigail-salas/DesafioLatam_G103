@@ -86,3 +86,69 @@ git push -u origin main
 7. `git push -u origin main` (se va a utilizar en más de una ocasion sin el "-u")
 
    - Sube todos los cambios subidos y comentados al repositorio remoto
+
+## Inicializar un REPOSITORIO con comando propios
+
+> [!CAUTION]
+> **se usan una sola vez, de manera _OBLIGATORIA_**
+
+1. Inicializamos el repositorio
+
+   ```bash
+   git init
+   ```
+
+2. Creamos y cambiamos a la rama "main"
+
+   ```bash
+   git branch -M main
+   ```
+
+3. Enlazamos nuestro repositorio local con el remoto
+
+   ```bash
+   git remote add origin https://github.com/abigail-salas/Gen_103.git
+   ```
+
+## Comando a realizar cada vez que hay un cambio a subir
+
+> [!IMPORTANT]
+> **se usan en más de una ocasion**
+
+1. Subimos los cambios al _area de preparacion_
+
+   ```bash
+   git add .
+   ```
+
+2. Comentamos / registramos los cambios subidos al _area de preparacion_
+
+   ```bash
+   git commit -m "comentario relacionado"
+   ```
+
+3. Subimos todos los cambios al repositorio remoto
+
+   ```bash
+   git push origin main
+   ```
+
+## Otros cambios útiles de Git
+
+- Ver en qué estado esta el repositorio
+
+```bash
+git status
+```
+
+- Ver el historial de commits
+
+```bash
+git log
+```
+
+- Clonar un repositorio
+
+```bash
+git clone https://github.com/abigail-salas/Gen_103.git
+```

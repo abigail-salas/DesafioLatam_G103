@@ -1,0 +1,16 @@
+.boton {
+  font-size: 50px;
+  background-color: rgba(165, 42, 42, 0.415);
+}
+
+.rojo {
+  border: 2px solid white;
+}
+
+.borde-solo {
+  background-color: rgba(43, 226, 168, 0.349);
+}
+
+.borde {
+  background-color: rgba(137, 43, 226, 0.349);
+}

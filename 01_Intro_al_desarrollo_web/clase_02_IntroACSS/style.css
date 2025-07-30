@@ -1,0 +1,60 @@
+body {
+  background-color: #1c3041;
+  color: #bf4342;
+}
+
+h1 {
+  font-family: fantasy;
+}
+
+/* p {
+  color: brown;
+  background-color: aqua;
+} */
+
+/* div {
+  background-color: antiquewhite;
+}
+ */
+
+.contenedor {
+  color: rgba(0, 180, 45, 0.894);
+  font-family: monospace;
+  background-color: #1b1b1e;
+}
+
+.tamaño-letra {
+  font-size: 25px;
+}
+
+.primer-bloque {
+  color: red;
+}
+
+.segundo-bloque {
+  color: green;
+}
+
+.tercer-bloque {
+  color: blue;
+}
+
+#primer-contenedor {
+  background-color: #58a4b0;
+  padding: 15px;
+  margin: 10px 20px 30px 40px;
+}
+
+#segundo-contenedor {
+  margin: 15px;
+  padding: 20px 40px;
+
+  border: 3px solid saddlebrown;
+}
+
+#tercer-contenedor {
+  margin-top: 20px;
+  padding-left: 40px;
+
+  border-radius: 20px;
+}

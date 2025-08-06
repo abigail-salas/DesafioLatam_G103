@@ -89,8 +89,7 @@ git push -u origin main
 
 ## Inicializar un REPOSITORIO con comando propios
 
-> [!CAUTION]
-> **se usan una sola vez, de manera _OBLIGATORIA_**
+> [!CAUTION] > **se usan una sola vez, de manera _OBLIGATORIA_**
 
 1. Inicializamos el repositorio
 
@@ -112,8 +111,7 @@ git push -u origin main
 
 ## Comando a realizar cada vez que hay un cambio a subir
 
-> [!IMPORTANT]
-> **se usan en más de una ocasion**
+> [!IMPORTANT] > **se usan en más de una ocasion**
 
 1. Subimos los cambios al _area de preparacion_
 
@@ -152,3 +150,7 @@ git log
 ```bash
 git clone https://github.com/abigail-salas/Gen_103.git
 ```
+
+https://github.com/gsanchezd/fdsw-github.git
+
+https://github.com/abigail-salas/fdsw-github.git

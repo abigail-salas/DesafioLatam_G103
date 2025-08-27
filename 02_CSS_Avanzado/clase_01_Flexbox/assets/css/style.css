@@ -86,3 +86,8 @@ ul li {
   display: flex;
   min-width: 100vh;
 }
+
+.main {
+  width: 100%;
+}
+

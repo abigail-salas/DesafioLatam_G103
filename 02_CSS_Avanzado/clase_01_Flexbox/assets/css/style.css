@@ -1,0 +1,88 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: black;
+  color: aliceblue;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  margin: 10px;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.alignItems {
+  height: 300px;
+  border: 2px solid brown;
+  margin: 20px 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.img-inicio {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: flex-end;
+
+  background-image: url(../img/desktop-wallpaper-night-cities-city-panorama.jpg);
+  background-size: cover;
+}
+
+.content {
+  /*  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center; */
+
+  text-align: center;
+  font-size: 1.4em;
+  height: 8em;
+  width: 100%;
+  padding: 1em 8em;
+  background-color: rgba(4, 1, 1, 0.421);
+  text-shadow: 2px 2px rgb(104, 99, 99);
+}
+
+menu {
+  background-color: rgb(68, 5, 126);
+  width: 10em;
+  min-height: 100vh;
+}
+
+li a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+
+  font-size: 1.4em;
+}
+
+.padre {
+  display: flex;
+  min-width: 100vh;
+}

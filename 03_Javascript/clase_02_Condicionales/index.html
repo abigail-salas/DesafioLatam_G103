@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h1>Condicionales</h1>
+
+    <p id="secret-result"></p>
+    <input type="text" id="input" />
+    <button
+      onclick="
+        let value = document.querySelector('#input').value;
+        let parrafo = document.querySelector('#secret-result');
+        if (value === 'abc123') {
+        parrafo.innerHTML = 'Lo Lograste';
+        } else {
+        parrafo.innerHTML = 'Incorrecto';
+        }
+    "
+    >
+      Verificar
+    </button>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

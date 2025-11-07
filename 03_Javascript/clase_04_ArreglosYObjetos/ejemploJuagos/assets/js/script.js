@@ -1,6 +1,14 @@
 function mostrarJuegos(juegos, contenedorId, limite) {
   const contenedor = document.getElementById(contenedorId);
 
+  // Si no existe el contenedor, salimos sin intentar manipularlo. Esto causaba error a la hora de renderizar
+  if (!contenedor) {
+    console.warn(
+      `mostrarJuegos: contenedor "${contenedorId}" no existe en esta página.`
+    );
+    return;
+  }
+
   console.log(contenedor, "<---- soy el contenedor");
 
   const cantidad = limite ? Math.min(juegos.length, limite) : juegos.length;
@@ -32,15 +40,23 @@ function mostrarJuegos(juegos, contenedorId, limite) {
   contenedor.innerHTML = html;
 }
 
-mostrarJuegos(juegos_pc, "contenedor_pc", 3);
-mostrarJuegos(juegos_consolas, "contenedor_consolas", 3);
+/* mostrarJuegos(juegos_pc, "contenedor-pc", 3);
+mostrarJuegos(juegos_consolas, "contenedor-consolas", 3);
 
-/* LOGICA DE CONTENEDORES */
+mostrarJuegos(juegos_pc, "html-pc");
+mostrarJuegos(juegos_consolas, "html-consola"); */
 
-const htmlPC = document.getElementById("html-pc");
-console.log(htmlPC, "<---- htmlpc");
-if (htmlPC) {
+// comprobación simple antes de renderizar para que no salga el console.warn en cada renderizacion de consola
+if (
+  document.getElementById("contenedor-pc") ||
+  document.getElementById("contenedor-consolas")
+) {
+  mostrarJuegos(juegos_pc, "contenedor-pc", 3);
+  mostrarJuegos(juegos_consolas, "contenedor-consolas", 3);
+} else if (document.getElementById("html-pc")) {
   mostrarJuegos(juegos_pc, "html-pc");
+} else if (document.getElementById("html-consola")) {
+  mostrarJuegos(juegos_consolas, "html-consola");
 }
 
 /* LOGICA FILTROS */
@@ -72,6 +88,12 @@ const btnOferta = document.getElementById("btn-oferta");
 const btnMultijugador = document.getElementById("btn-multijugador");
 const btnTodos = document.getElementById("btn-todos");
 
-btnOferta.addEventListener("click", () => filtrarJuegos("oferta"));
-btnMultijugador.addEventListener("click", () => filtrarJuegos("multijugador"));
-btnTodos.addEventListener("click", () => filtrarJuegos("todos"));
+if (btnOferta) {
+  btnOferta.addEventListener("click", () => filtrarJuegos("oferta"));
+}
+if (btnMultijugador) {
+  btnMultijugador.addEventListener("click", () =>
+    filtrarJuegos("multijugador")
+  );
+}
+if (btnTodos) btnTodos.addEventListener("click", () => filtrarJuegos("todos"));

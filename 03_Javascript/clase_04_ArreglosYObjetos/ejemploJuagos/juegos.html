@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tienda de Videojuegos</h1>
+      <nav>
+        <a href="./juegos_PC.html">Juegos de PC</a>
+        <a href="./juegos_consola.html">Juegos de Consola</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="consolas">
+        <h2>Juegos para Consolas</h2>
+        <div id="contenedor_consolas" class="contenedor"></div>
+        <button><a href="./juegos_consola.html">Ver todos</a></button>
+      </section>
+
+      <section id="pc">
+        <h2>Juegos para PC</h2>
+        <div id="contenedor_pc" class="contenedor"></div>
+        <button><a href="./juegos_PC.html">Ver todos</a></button>
+      </section>
+
+      <section id="filtros">
+        <h2>Filtrar Juegos</h2>
+        <button id="btn-oferta">Juegos en Oferta</button>
+        <button id="btn-multijugador">Juegos Multijugador</button>
+        <button id="btn-todos">Mostrar todos los juegos</button>
+      </section>
+
+
+      <section id="contenedor-filtrado" class="contenedor"></section>
+    </main>
+
+    <footer></footer>
+
+    <script src="./assets/js/juegos_PC.js"></script>
+    <script src="./assets/js/juegos_consolas.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

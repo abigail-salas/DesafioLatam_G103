@@ -8,6 +8,8 @@ let nombre5 = "Sofia";
 
 let nombres = ["Nicolas", "Jasmin", "Juan", "Max", "Sofia"];
 
+
+nombres.push("Karina")
 /* CANTIDAD DE ELEMENTOS */
 
 nombres.length; // devuelve ----> 5

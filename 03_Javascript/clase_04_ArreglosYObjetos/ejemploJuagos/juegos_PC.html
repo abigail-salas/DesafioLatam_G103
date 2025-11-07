@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tienda de Videojuegos</h1>
+      <nav>
+        <a href="./juegos.html">Inicio</a>
+        <a href="./juegos_consola.html">Juegos de Consola</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Juegos para PC</h1>
+      <div id="html-pc" class="contenedor"></div>
+    </main>
+
+    <script src="./assets/js/juegos_PC.js"></script>
+    <script src="./assets/js/juegos_consolas.js"></script>
+    <!--<script src="./assets/js/script.js"></script> -->
+
+    <script>
+      function mostrarJuegos(juegos, contenedorId, limite) {
+        const contenedor = document.getElementById(contenedorId);
+
+        console.log(contenedor, "<---- soy el contenedor");
+
+        const cantidad = limite
+          ? Math.min(juegos.length, limite)
+          : juegos.length;
+
+        let html = "";
+
+        for (let i = 0; i < cantidad; i++) {
+          const juego = juegos[i];
+
+          const oferta = juego.oferta ? "En oferta" : "Precio original";
+          const multijugador = juego.multijugador
+            ? "Multijugador disponible"
+            : "Un solo jugador";
+
+          html += `
+    <div class="juego">
+      <img src="${juego.imagen}" alt="${juego.nombre}" />
+      <h3>${juego.nombre}</h3>
+      <p>${juego.descripcion}</p>
+      <p>Precio:${juego.precio}</p>
+      <p>${oferta}</p>
+      <p>${multijugador}</p>
+    </div>
+      `;
+        }
+
+        console.log(html);
+
+        contenedor.innerHTML = html;
+      }
+
+      mostrarJuegos(juegos_pc, "html-pc");
+    </script>
+  </body>
+</html>

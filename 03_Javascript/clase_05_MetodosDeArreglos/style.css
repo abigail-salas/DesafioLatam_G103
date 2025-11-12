@@ -1,0 +1,95 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #4f000b;
+  color: aliceblue;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.push {
+  background-color: #720026;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.push:hover {
+  background-color: #990033;
+}
+
+.delete {
+  background-color: #ce4257;
+}
+
+.delete:hover {
+  background-color: #fa516b;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: rgba(0, 0, 0, 0.176);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+li:hover {
+  transform: scale(1.02);
+  background-color: rgba(0, 0, 0, 0.377);
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.seccion-invitados {
+  background-color: #ff9b54;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+
+.seccion-actores {
+  background-color: #ff7f51;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+
+h2 {
+  margin: 10px 0px;
+  font-size: 25px;
+  text-decoration: underline;
+}

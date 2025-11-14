@@ -46,20 +46,21 @@ console.log(mayores);
 let textoJoin = num.join("-");
 console.log(textoJoin); // devuelve ---> 1-2-3-6-7-8-9
 
-/* REDUCE */
+/* ============= REDUCIR A UN SOLO VALOR ============= */
 
 /* METODO array.reduce(function, valorInicial) Reduce todos los elementos a un solo valor acumulado, en base a la funcion dada */
 
 let sumaTotal = num.reduce((acumulador, actual) => {
   return typeof actual === "number" ? acumulador + actual : acumulador;
 }, 0);
+console.log(sumaTotal, "suma de todos los arreglos"); // devuelve ----> 36
 
-console.log(sumaTotal, "suma de todos los arreglos");
+/* ============= BUSCAR ELEMENTOS ============= */
 
-/* buscar elementos */
+/* METODO array.find(function) Busca el PRIMER ELEMENTO que cumpla con la condición y lo devuelve (Si no encuentra coincidencias, devuelve `undefined`) */
 
 let par = num.find((e) => e % 2 === 0);
-console.log(par, "<----- PAR");
+console.log(par, "<----- PAR"); // devuelve ----> 2
 
 /* ------------- DOM + METODOS ------------- */
 

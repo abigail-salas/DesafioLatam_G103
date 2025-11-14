@@ -46,6 +46,21 @@ console.log(mayores);
 let textoJoin = num.join("-");
 console.log(textoJoin); // devuelve ---> 1-2-3-6-7-8-9
 
+/* REDUCE */
+
+/* METODO array.reduce(function, valorInicial) Reduce todos los elementos a un solo valor acumulado, en base a la funcion dada */
+
+let sumaTotal = num.reduce((acumulador, actual) => {
+  return typeof actual === "number" ? acumulador + actual : acumulador;
+}, 0);
+
+console.log(sumaTotal, "suma de todos los arreglos");
+
+/* buscar elementos */
+
+let par = num.find((e) => e % 2 === 0);
+console.log(par, "<----- PAR");
+
 /* ------------- DOM + METODOS ------------- */
 
 const listaDeInvitados = document.getElementById("invitados");
@@ -85,6 +100,8 @@ const actores = [
 
 btnActores.addEventListener("click", () => {
   const nuevoId = actores[actores.length - 1].id + 100;
+
+  /* const nuevoId = Date.now(); */
   const nuevoNombre = actoresInput.value;
   const nuevaEdad = edadActoresInput.value;
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Control de Gastos y Deudas</h1>
+
+    <section class="formulario">
+      <input type="text" id="descripcion" placeholder="Descripción del gasto" />
+      <input type="number" id="monto" placeholder="Monto ($)" />
+      <select id="categoria">
+        <option value="">Seleccionar categoría</option>
+        <option value="Hogar">Hogar</option>
+        <option value="Comida">Comida</option>
+        <option value="Entretenimiento">Entretenimiento</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Otros">Otros</option>
+      </select>
+
+      <label class="switch-label">
+        <input type="checkbox" id="pagado" />
+        <span class="switch"></span>
+        <span class="switch-text">¿Pagado?</span>
+      </label>
+
+      <button id="agregar">Agregar gasto</button>
+    </section>
+
+    <section class="pendientes">
+      <h2>Deudas / Pendientes</h2>
+      <ul id="lista-pendientes"></ul>
+      <p class="total" id="total-pendientes"></p>
+    </section>
+
+    <section class="pagados">
+      <h2>Pagados</h2>
+      <ul id="lista-pagados"></ul>
+      <p class="total" id="total-pagados"></p>
+    </section>
+
+    <script src="./gastos.js"></script>
+  </body>
+</html>

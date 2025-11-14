@@ -42,10 +42,12 @@ let gastos = [
 btnAgregar.addEventListener("click", () => {
   const descripcion = descripcionInput.value;
   const monto = montoInput.value;
-  const pagado = pagadoCheck.value;
+
+  /* Error encontrado, se cambio el .value por .checked */
+  const pagado = pagadoCheck.checked;
   const categoria = categoriaSelect.value;
 
-  if (!descripcion || !monto || !pagado || !categoria) {
+  if (!descripcion || !monto || !categoria) {
     return alert("Completa todos los campos");
   }
 
@@ -64,8 +66,7 @@ btnAgregar.addEventListener("click", () => {
   descripcionInput.value = "";
   montoInput.value = "";
   categoriaSelect.value = "";
-
-  // pagadoCheck.value = "";
+  pagadoCheck.checked = false;
 
   renderFiltro();
 });
@@ -73,21 +74,24 @@ btnAgregar.addEventListener("click", () => {
 function renderLista(lista, contenedor, pagado) {
   contenedor.innerHTML = "";
 
-  const li = document.createElement("li");
-
   if (lista.length === 0) {
     contenedor.innerHTML = `<li>No hay gastos registrados</li>`;
   }
 
   lista.forEach((element) => {
+    const li = document.createElement("li");
+
     li.classList.add(pagado ? "pagado" : "pendientes");
 
-    li.innerHTML += `
+    /* Se agrego la logica para que se vean los checkbox tildados*/
+    li.innerHTML = `
     <h4>${element.descripcion}</h4>
     <p>${element.monto}</p>
     <p>${element.categoria}</p>
     <label class="switch-label">
-      <input type="checkbox" onchange="togglePagado(${element.id})" />
+      <input ${
+        element.pagado ? "checked" : ""
+      } type="checkbox" onchange="togglePagado(${element.id})" />
       <span class="switch"></span>
     </label>
     `;
@@ -106,9 +110,6 @@ const togglePagado = (id) => {
 function renderFiltro() {
   const pendientes = gastos.filter((e) => !e.pagado);
   const pagados = gastos.filter((e) => e.pagado);
-
-  console.log(pendientes, "<---- pendientes");
-  console.log(pagados, "<---- pagados");
 
   renderLista(pendientes, listaPendiente, false);
   renderLista(pagados, listaPagados, true);

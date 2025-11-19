@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ee2359;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.card {
+  /* background: linear-gradient(145deg, #161b22, #1e242d); */
+  border: 5px solid #4c061d;
+  border-radius: 20px;
+  padding: 30px;
+  width: 380px;
+  box-shadow: 0 0 20px rgba(76, 6, 29, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s ease;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card .img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #efc7c2;
+  box-shadow: 0 0 10px #efc7c2;
+}
+
+.card .name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #efc7c2;
+}
+
+.card .phone,
+.card .location {
+  font-size: 1.2rem;
+  color: #d1d1d1;
+}
+
+#btn-reset {
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #4c061d;
+  border: 2px solid #efc7c2;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+hr {
+  width: 100%;
+}

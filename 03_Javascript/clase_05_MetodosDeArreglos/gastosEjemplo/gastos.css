@@ -1,0 +1,185 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2e2e2e;
+}
+
+/* FORMULARIO */
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.formulario input,
+.formulario select,
+button {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* SWITCH */
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.switch-label input {
+  display: none; /* Oculta el checkbox real */
+}
+
+.switch {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* ::after es un pseudo-elemento.
+Es como un elemento “fantasma” que vive dentro de .switch, aunque no exista en el HTML.
+
+Lo usamos para dibujar el botón circular del switch.
+
+.switch::after se dibuja adentro del <span class="switch">.
+*/
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* 
+▶ input:checked
+
+Quiere decir:
+
+“cuando el input (checkbox escondido) está marcado”
+
+▶ + .switch
+
+El símbolo + significa hermano siguiente.
+
+Traducción:
+
+“aplicá este CSS al elemento .switch que está justo después del input que está checked”
+*/
+
+.switch-label input:checked + .switch {
+  background: #4caf50;
+}
+
+/* 
+Esto es lo mismo que antes, pero ahora afecta al pseudo-elemento del switch.
+
+Traducción:
+
+“Si el input está checked, modifica el pseudo-elemento ::after del switch que está justo después del input”.
+
+¿Para qué se usa?
+
+Para mover el botoncito hacia la derecha cuando está activado.
+*/
+
+.switch-label input:checked + .switch::after {
+  transform: translateX(20px);
+}
+
+.switch-text {
+  font-size: 0.9rem;
+}
+
+/* SECCIONES */
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+section {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 45%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li span {
+  flex-grow: 1;
+  margin-left: 8px;
+}
+
+li.pagado {
+  background-color: #e2f8e2;
+  border-left: 5px solid #4caf50;
+}
+
+li.pendientes {
+  background-color: #fde0e0;
+  border-left: 5px solid #e74c3c;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.filtros {
+  text-align: center;
+  margin-bottom: 20px;
+}

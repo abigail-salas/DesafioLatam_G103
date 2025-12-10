@@ -1,0 +1,25 @@
+function Banner() {
+  /* + Crear variables donde guardar los estilos */
+  let estilos = { color: "#62afb5", fontSize: "40px" };
+
+  return (
+    /* Aplicando css mediante clases ↓↓↓↓ */
+    <div className="banner-css">
+      {/* Estilos mediante propiedades ↓↓↓↓ */}
+      <h1 style={{ fontFamily: "fantasy" }}>Esto es un banner</h1>
+      <img
+        src="https://images.unsplash.com/photo-1710781944947-7cd4a381499f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+        width="500px"
+        height="300px"
+      />
+
+      {/* + Aplicar estilos mediante variables ↓↓↓↓ */}
+      <p style={estilos}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, hic!
+      </p>
+    </div>
+  );
+}
+
+export default Banner;

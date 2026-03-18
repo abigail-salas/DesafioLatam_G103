@@ -15,7 +15,6 @@
    ```
 
 3. **Crear las siguientes tablas**:
-
    - Tabla `posts` (Publicaciones del blog):
 
      ```sql
@@ -58,7 +57,6 @@
      ```
 
 4. **Insertar datos en las tablas**:
-
    - Insertar registros en la tabla `posts`:
 
      ```sql
@@ -101,7 +99,6 @@
 ### Consultas con JOINs y Subconsultas
 
 1. **INNER JOIN** - Mostrar todas las publicaciones con sus comentarios:
-
    - Consulta para obtener todas las publicaciones y sus comentarios, utilizando un `INNER JOIN`.
 
    ```sql
@@ -109,31 +106,38 @@
    ```
 
 2. **LEFT JOIN** - Mostrar todas las publicaciones con comentarios (o NULL si no tienen):
-
    - Usa un `LEFT JOIN` para mostrar todas las publicaciones, incluso aquellas sin comentarios (donde los comentarios serán `NULL`).
 
    ```sql
-
+    SELECT p.id AS post_id,   p.title,   p.content AS post_content,  c.id AS comment_id,  c.content AS comment_content FROM posts p LEFT JOIN comments c ON p.id = c.post_id;
    ```
 
 3. **FULL JOIN** - Mostrar todas las publicaciones y todos los comentarios, incluso si no coinciden:
-
    - Realiza una consulta que incluya todas las publicaciones y todos los comentarios, incluso si no tienen coincidencia.
 
    ```sql
-
+    SELECT
+    posts.title AS titulo_post,
+    posts.content AS contenido_post,
+    comments.content AS contenido_comentario
+    FROM posts
+    FULL JOIN comments ON posts.id = comments.post_id;
    ```
 
 4. **CROSS JOIN** - Mostrar todas las combinaciones posibles entre publicaciones y comentarios:
-
    - Realiza una consulta con `CROSS JOIN` que genere un producto cartesiano entre las publicaciones y los comentarios.
 
    ```sql
-
+    SELECT
+   p.id AS post_id,
+   p.title,
+   c.id AS comment_id,
+   c.content AS comment_content
+    FROM posts p
+    CROSS JOIN comments c;
    ```
 
 5. **Subconsulta** - Mostrar los productos cuyo precio es mayor al promedio:
-
    - Realiza una subconsulta para encontrar los productos cuyo precio es mayor al precio promedio de todos los productos.
 
    ```sql
@@ -141,7 +145,6 @@
    ```
 
 6. **INNER JOIN** con función de agregación - Mostrar el total de ventas por producto:
-
    - Muestra cuántas unidades se han vendido de cada producto, utilizando `INNER JOIN` y la función de agregación `SUM()`.
 
    ```sql
@@ -151,13 +154,10 @@
 ### Consultas Avanzadas con Subconsultas y Condicionales
 
 1. **Mostrar las publicaciones que no tienen ningún comentario**:
-
    - Usa un `LEFT JOIN` y una condición para mostrar las publicaciones que no tienen comentarios.
 
 2. **Mostrar las publicaciones que tienen más de 1 comentario**:
-
    - Utiliza `GROUP BY` y `HAVING` para mostrar solo las publicaciones que tienen más de un comentario.
 
 3. **Contar el total de combinaciones posibles entre publicaciones y comentarios (CROSS JOIN)**:
-
    - Utiliza un `CROSS JOIN` para contar cuántas combinaciones posibles existen entre las publicaciones y los comentarios.
